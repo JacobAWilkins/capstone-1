@@ -1,0 +1,104 @@
+{
+    "items": [
+        {
+            "name": "Product 1",
+            "serNum": "123",
+            "price": "14.95",
+            "manufacturer": "Ford",
+            "category": "tech",
+            "quantity": "1",
+            "image": "Some website",
+            "inCart": false
+        },
+        {
+            "name": "Product 2",
+            "serNum": "123",
+            "price": "14.95",
+            "manufacturer": "Ford",
+            "category": "tech",
+            "quantity": "1",
+            "image": "Some website",
+            "inCart": false
+        },
+        {
+            "name": "Product 3",
+            "serNum": "123",
+            "price": "14.95",
+            "manufacturer": "Ford",
+            "category": "tech",
+            "quantity": "1",
+            "image": "Some website",
+            "inCart": false
+        },
+        {
+            "name": "Product 4",
+            "serNum": "123",
+            "price": "14.95",
+            "manufacturer": "Ford",
+            "category": "tech",
+            "quantity": "1",
+            "image": "Some website",
+            "inCart": false
+        },
+        {
+            "name": "Product 5",
+            "serNum": "123",
+            "price": "14.95",
+            "manufacturer": "Ford",
+            "category": "tech",
+            "quantity": "1",
+            "image": "Some website",
+            "inCart": false
+        },
+        {
+            "name": "Product 6",
+            "serNum": "123",
+            "price": "14.95",
+            "manufacturer": "Ford",
+            "category": "tech",
+            "quantity": "1",
+            "image": "Some website",
+            "inCart": false
+        },
+        {
+            "name": "Product 7",
+            "serNum": "123",
+            "price": "14.95",
+            "manufacturer": "Ford",
+            "category": "tech",
+            "quantity": "1",
+            "image": "Some website",
+            "inCart": false
+        },
+        {
+            "name": "Product 8",
+            "serNum": "123",
+            "price": "14.95",
+            "manufacturer": "Ford",
+            "category": "tech",
+            "quantity": "1",
+            "image": "Some website",
+            "inCart": false
+        },
+        {
+            "name": "Product 9",
+            "serNum": "123",
+            "price": "14.95",
+            "manufacturer": "Ford",
+            "category": "tech",
+            "quantity": "1",
+            "image": "Some website",
+            "inCart": false
+        },
+        {
+            "name": "Product 10",
+            "serNum": "123",
+            "price": "14.95",
+            "manufacturer": "Ford",
+            "category": "tech",
+            "quantity": "1",
+            "image": "Some website",
+            "inCart": false
+        }
+    ]
+}

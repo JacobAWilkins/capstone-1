@@ -3,19 +3,18 @@
 }
 
 nav {
-  border-bottom: 10px solid orange;
+  border-bottom: 10px solid blue;
 }
 
 ul {
-  display : flex;
+  display: flex;
   justify-content: space-evenly;
 }
 
 a {
-  color : orange;
+  color: black;
   text-decoration: none;
 }
-
 
 li {
   list-style: none;
@@ -41,10 +40,35 @@ li {
   color: black;
 }
 
-.title:hover, .navBar:hover {
+.title:hover,
+.navBar:hover {
   text-decoration: underline;
 }
 
-.author {
+.prodPrice {
   font-style: italic;
+}
+
+.prodInfo {
+  display: grid;
+  grid-template-areas:
+    "name pic"
+    "price pic";
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.prodPic {
+  grid-area: pic;
+}
+.prodName {
+  grid-area: name;
+}
+
+.prodName:hover {
+  text-decoration: underline;
+}
+
+.prodPrice {
+  grid-area: price;
 }
