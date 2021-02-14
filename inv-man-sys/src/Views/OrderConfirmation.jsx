@@ -40,7 +40,7 @@ function OrderConfirmation({ order, cartTotal }) {
             <th>-</th>
             <th>-</th>
             <th>-</th>
-            <th>{cartTotal}</th>
+            <th>{(cartTotal).toFixed(2)}</th>
           </tr>
         </tbody>
       </Table>

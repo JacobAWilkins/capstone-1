@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Products from '../Components/Products';
 
-function ShoppingCart({ products, addToCart, order, updateOrder }) {
+function ShoppingCart({ products, addToCart, updateOrder }) {
     let cartTotal = 0;
     let filteredProducts = products.filter(product => product.inCart === true);
 

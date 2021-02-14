@@ -37,10 +37,10 @@ function NavBar({ defaultProducts, setProducts }) {
         <header>
             <nav>
                 <Form.Row>
-                    <Col md={3}>
+                    <Col md={4}>
                         <Link className="title" onClick={reset} to='/'><h1>Jacob's Grocery</h1></Link>
                     </Col>
-                    <Form.Group as={Col} md={{ span: 3.5, offset: 4 }}>
+                    <Form.Group as={Col} md={{ span: 3.5, offset: 2 }} style={{ marginTop: 12 }}>
                         <Form.Control
                             className="searchBar"
                             type="text"
@@ -49,12 +49,12 @@ function NavBar({ defaultProducts, setProducts }) {
                             onKeyPress={handleKeyPress}
                             placeholder="Search product, category, etc.." />
                     </Form.Group>
-                    <Form.Group md={{ span: 1, offset: 2 }}>
+                    <Form.Group md={{ span: 1, offset: 2 }} style={{ marginTop: 12 }}>
                         <Button variant="info" onClick={search}>Search</Button>
                     </Form.Group>
                     <Form.Group md={{ span: 2, offset: 1 }}>
                         <Link className="cartIcon" onClick={reset} to="/shopping-cart">
-                            <FontAwesomeIcon icon={faShoppingCart} size="8x" />
+                            <FontAwesomeIcon icon={faShoppingCart} size="8x" style={{ marginTop: 12 }} />
                         </Link>
                     </Form.Group>
                 </Form.Row>

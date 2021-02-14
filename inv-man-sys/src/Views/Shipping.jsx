@@ -30,12 +30,12 @@ function Shipping() {
                     <Form.Row>
                         <Form.Group as={Col} md="4">
                             <Form.Label>First name</Form.Label>
-                            <Form.Control required type="text" placeholder="First name" defaultValue="Jacob" />
+                            <Form.Control required type="text" placeholder="First name" />
                             <Form.Control.Feedback type="invalid">Please provide a first name.</Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group as={Col} md="4">
                             <Form.Label>Last name</Form.Label>
-                            <Form.Control required type="text" placeholder="Last name" defaultValue="Wilkins" />
+                            <Form.Control required type="text" placeholder="Last name" />
                             <Form.Control.Feedback type="invalid">Please provide a last name.</Form.Control.Feedback>
                         </Form.Group>
                     </Form.Row>
