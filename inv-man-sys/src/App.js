@@ -14,13 +14,15 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   const [defaultProducts, setDefaultProducts] = useState(initialProducts);
   const [products, setProducts] = useState(initialProducts);
+  const [order, setOrder] = useState([]);
+  const [cartTotal, setCartTotal] = useState();
 
   function addToCart(id, newCartQuantity) {
     const update = products.map(product => {
       if (newCartQuantity > product.quantity) {
         return product;
       } else {
-        return product.id === id ? { ...product, inCart: !product.inCart, cartQuantity: newCartQuantity, quantity: product.quantity - newCartQuantity } : product;
+        return product.id === id ? { ...product, inCart: !product.inCart, cartQuantity: newCartQuantity } : product;
       }
     })
     setProducts([...update]);
@@ -29,10 +31,15 @@ function App() {
       if (newCartQuantity > product.quantity) {
         return product;
       } else {
-        return product.id === id ? { ...product, inCart: !product.inCart, cartQuantity: newCartQuantity, quantity: product.quantity - newCartQuantity } : product;
+        return product.id === id ? { ...product, inCart: !product.inCart, cartQuantity: newCartQuantity } : product;
       }
     })
     setDefaultProducts([...defaultUpdate]);
+  }
+
+  function updateOrder(order, cartTotal) {
+    setOrder(order);
+    setCartTotal(cartTotal);
   }
 
   return (
@@ -53,6 +60,7 @@ function App() {
             <ShoppingCart
               products={products}
               addToCart={addToCart}
+              updateOrder={updateOrder}
             />
           </Route>
           <Route exact path="/shipping">
@@ -62,7 +70,10 @@ function App() {
             <Billing />
           </Route>
           <Route exact path="/order-confirmation">
-            <OrderConfirmation />
+            <OrderConfirmation
+              order={order}
+              cartTotal={cartTotal}
+            />
           </Route>
           <Route exact path="/:productId">
             <ProductDetail

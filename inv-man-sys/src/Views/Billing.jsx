@@ -35,69 +35,69 @@ function Billing() {
               <Form.Control.Feedback type="invalid">Please provide a credit card number.</Form.Control.Feedback>
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="formHorizontalExpiryDate">
+          <Form.Group as={Row}>
             <Form.Label column sm={3}>Expiry Date</Form.Label>
             <Col sm={9}>
               <Form.Control required type="month" placeholder="MM/YY" />
               <Form.Control.Feedback type="invalid">Please provide an expiry date.</Form.Control.Feedback>
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="formHorizontalCVV">
+          <Form.Group as={Row}>
             <Form.Label column sm={3}>CVV</Form.Label>
             <Col sm={9}>
               <Form.Control required type="text" placeholder="000" />
               <Form.Control.Feedback type="invalid">Please provide a CVV.</Form.Control.Feedback>
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="formHorizontalCountry">
+          <Form.Group as={Row}>
             <Form.Label column sm={3}>Country</Form.Label>
             <Col sm={9}>
               <Form.Control required type="text" />
               <Form.Control.Feedback type="invalid">Please provide a country.</Form.Control.Feedback>
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="formHorizontalAddress1">
+          <Form.Group as={Row}>
             <Form.Label column sm={3}>Address 1</Form.Label>
             <Col sm={9}>
               <Form.Control required type="text" />
               <Form.Control.Feedback type="invalid">Please provide an address.</Form.Control.Feedback>
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="formHorizontalAddress2">
+          <Form.Group as={Row}>
             <Form.Label column sm={3}>Address 2</Form.Label>
             <Col sm={9}>
               <Form.Control type="text" />
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="formHorizontalCity">
+          <Form.Group as={Row}>
             <Form.Label column sm={3}>City</Form.Label>
             <Col sm={9}>
               <Form.Control required type="text" />
               <Form.Control.Feedback type="invalid">Please provide a city.</Form.Control.Feedback>
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="formHorizontalState">
+          <Form.Group as={Row}>
             <Form.Label column sm={3}>State</Form.Label>
             <Col sm={9}>
               <Form.Control required type="text" />
               <Form.Control.Feedback type="invalid">Please provide a state.</Form.Control.Feedback>
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="formHorizontalPostalCode">
+          <Form.Group as={Row}>
             <Form.Label column sm={3}>Postal Code</Form.Label>
             <Col sm={9}>
               <Form.Control required type="text" placeholder="00000" />
               <Form.Control.Feedback type="invalid">Please provide a postal code.</Form.Control.Feedback>
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="formHorizontalContactPhoneNumber">
+          <Form.Group as={Row}>
             <Form.Label column sm={3}>Contact Phone Number</Form.Label>
             <Col sm={9}>
               <Form.Control required type="text" placeholder="(000) 000-0000" />
               <Form.Control.Feedback type="invalid">Please provide a phone number.</Form.Control.Feedback>
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="formHorizontalEmailAddress">
+          <Form.Group as={Row}>
             <Form.Label column sm={3}>Email Address</Form.Label>
             <Col sm={9}>
               <Form.Control required type="email" placeholder="example@example.com" />
@@ -106,7 +106,7 @@ function Billing() {
           </Form.Group>
           <Form.Group as={Row}>
             <Col sm={{ span: 10, offset: 2 }}>
-              <Button type="submit">Pay Now</Button>
+              <Button type="submit" variant="info">Pay Now</Button>
             </Col>
           </Form.Group>
         </Form>

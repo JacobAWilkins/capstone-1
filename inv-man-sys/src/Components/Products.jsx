@@ -1,9 +1,10 @@
 import Product from './Product';
+import CardColumns from 'react-bootstrap/CardColumns';
 
 function Products({ products, addToCart }) {
 
     return (
-        <div className="products">
+        <CardColumns>
             {products.map((product) =>
                 <Product
                     id={product.id}
@@ -15,7 +16,7 @@ function Products({ products, addToCart }) {
                     addToCart={addToCart}
                 />
             )}
-        </div>
+        </CardColumns>
     )
 }
 

@@ -3,8 +3,16 @@
 }
 
 nav {
-  border-bottom: 5px solid black;
-  padding: 10px;
+  background-color: #343a40;
+}
+
+footer { 
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #343a40;
+  color: white;
+  margin-top: 10px;
 }
 
 ul {
@@ -28,31 +36,14 @@ li {
 }
 
 .title {
-  color: black;
+  color: white;
 }
 
 .title:hover {
+  color: #17a2b8;
   text-decoration: none;
 }
 
-.prodPrice {
-  font-style: italic;
-}
-
-.prodInfo {
-  display: grid;
-  grid-template-areas:
-    "name pic"
-    "price pic";
-  grid-gap: 10px;
-  padding: 10px;
-}
-
-.prodInfo { grid-area: prodInfo; }
-.prodAdd { grid-area: prodAdd; }
-.prodPic { grid-area: pic; }
-.prodName { grid-area: name; }
-.prodPrice { grid-area: price; }
 .totalPrice { grid-area: total; }
 .checkout { grid-area: checkout; }
 
@@ -63,17 +54,36 @@ li {
   padding: 10px;
 }
 
-.prod {
-  display: grid;
-  grid-template-areas: "prodInfo prodInfo prodAdd";
-  grid-gap: 10px;
-  padding: 10px;
-}
-
 .title {
   font-family: 'Brush Script MT', cursive;
+}
+
+.prodPic {
+  border: 2px solid black;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
 .searchBar {
   width: 300px;
 }
+
+.cartIcon {
+  color: white;
+  font-size: 0.3rem;
+  padding: 10px;
+}
+
+.cartIcon:hover {
+  color: #17a2b8;
+}
+
+.productPage {
+  padding-top: 10px;
+}
+
+.addToCartButton {
+  margin: 10px;
+}
+
+

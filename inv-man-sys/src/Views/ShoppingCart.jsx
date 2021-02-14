@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Products from '../Components/Products';
 
-function ShoppingCart({ products, addToCart }) {
+function ShoppingCart({ products, addToCart, order, updateOrder }) {
     let cartTotal = 0;
     let filteredProducts = products.filter(product => product.inCart === true);
 
@@ -12,9 +12,16 @@ function ShoppingCart({ products, addToCart }) {
     })
 
     function checkout() {
+        let order = []
         filteredProducts.forEach((prod) => {
+            order.push({ name: prod.name, quantity: prod.cartQuantity, price: prod.price });
+
             prod.inCart = false;
+            prod.quantity = prod.quantity - prod.cartQuantity;
+            prod.cartQuantity = 1;
         })
+        updateOrder(order, cartTotal);
+
         cartTotal = 0;
     }
 
@@ -29,7 +36,7 @@ function ShoppingCart({ products, addToCart }) {
             <div className="shoppingCart">
                 <h4 className="totalPrice">Total: {cartTotal.toFixed(2)}</h4>
                 <Link to="/shipping">
-                    <Button className="checkout" variant="primary" type="submit" onClick={checkout}>
+                    <Button className="checkout" variant="info" type="submit" onClick={checkout}>
                         Checkout
                     </Button>
                 </Link>
