@@ -6,6 +6,8 @@ import Card from 'react-bootstrap/Card';
 
 function Product({ id, name, price, cartQuantity, image, inCart, addToCart }) {
     const [newCartQuantity, setCartQuantity] = useState(cartQuantity);
+
+    // updates the cart quantity of the product
     function handleQuantityChange(e) {
         setCartQuantity(e.target.value);
     }

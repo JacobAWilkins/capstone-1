@@ -8,8 +8,9 @@ import Container from 'react-bootstrap/Container';
 
 function Billing() {
   const history = useHistory();
-
   const [validated, setValidated] = useState(false);
+
+  // checks that the form is filled out accurately on submit
   const handleSubmit = (e) => {
     const form = e.currentTarget;
     if (form.checkValidity() === false) {

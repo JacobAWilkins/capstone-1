@@ -17,6 +17,7 @@ function App() {
   const [order, setOrder] = useState([]);
   const [cartTotal, setCartTotal] = useState();
 
+  // Controls whether a product is in the cart or not. Controlled by the in cart button
   function addToCart(id, newCartQuantity) {
     const update = products.map(product => {
       if (newCartQuantity > product.quantity) {
@@ -37,6 +38,7 @@ function App() {
     setDefaultProducts([...defaultUpdate]);
   }
 
+  // Keeps track of the current order to display on the order confirmation page
   function updateOrder(order, cartTotal) {
     setOrder(order);
     setCartTotal(cartTotal);

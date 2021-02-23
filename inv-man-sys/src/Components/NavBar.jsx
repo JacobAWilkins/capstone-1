@@ -5,8 +5,6 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Container from 'react-bootstrap/esm/Container';
 
 function NavBar({ defaultProducts, setProducts }) {
     const [input, updateInput] = useState('');
@@ -17,6 +15,7 @@ function NavBar({ defaultProducts, setProducts }) {
         }
     }
 
+    // searches through the products to filter by multiple categories
     function search() {
         const filtered = defaultProducts.filter(product => {
             return product.name.toLowerCase().includes(input.toLowerCase()) ||
@@ -29,6 +28,7 @@ function NavBar({ defaultProducts, setProducts }) {
         setProducts(filtered);
     }
 
+    // resets the page to show all products
     function reset() {
         setProducts(defaultProducts);
     }
@@ -38,7 +38,7 @@ function NavBar({ defaultProducts, setProducts }) {
             <nav>
                 <Form.Row>
                     <Col md={4}>
-                        <Link className="title" onClick={reset} to='/'><h1>Jacob's Grocery</h1></Link>
+                        <Link className="title" onClick={reset} to='/'><h1 style={{ marginTop: 6 }}>Jacob's Grocery</h1></Link>
                     </Col>
                     <Form.Group as={Col} md={{ span: 3.5, offset: 2 }} style={{ marginTop: 12 }}>
                         <Form.Control

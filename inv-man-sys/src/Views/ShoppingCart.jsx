@@ -11,6 +11,7 @@ function ShoppingCart({ products, addToCart, updateOrder }) {
         cartTotal += (prod.price * prod.cartQuantity);
     })
 
+    // resets products and updates the order information on checkout
     function checkout() {
         let order = []
         filteredProducts.forEach((prod) => {
