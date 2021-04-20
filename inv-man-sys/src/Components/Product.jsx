@@ -4,7 +4,9 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
+//class Product extends React.Component {
 function Product({ id, name, price, cartQuantity, image, inCart, addToCart }) {
+
     const [newCartQuantity, setCartQuantity] = useState(cartQuantity);
 
     // updates the cart quantity of the product

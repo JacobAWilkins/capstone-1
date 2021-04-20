@@ -7,15 +7,44 @@ import ShoppingCart from './Views/ShoppingCart';
 import ProductDetail from './Views/ProductDetail';
 import Shipping from './Views/Shipping';
 import Billing from './Views/Billing';
+import AddProduct from './Views/AddProduct';
 import OrderConfirmation from './Views/OrderConfirmation';
-import initialProducts from './initialProducts';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
-  const [defaultProducts, setDefaultProducts] = useState(initialProducts);
-  const [products, setProducts] = useState(initialProducts);
+  const [defaultProducts, setDefaultProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [order, setOrder] = useState([]);
   const [cartTotal, setCartTotal] = useState();
+
+
+
+  const PRODUCT_URL = 'http://localhost:8080/product/';
+
+  useEffect(() => {
+    fetch(PRODUCT_URL)
+      .then(raw => raw.json())
+      .then(res => setProducts(res));
+  }, [])
+
+  useEffect(() => {
+    fetch(PRODUCT_URL)
+      .then(raw => raw.json())
+      .then(res => setDefaultProducts(res));
+  }, [])
+
+  const handleDelete = () => {
+
+    fetch(PRODUCT_URL)
+      .then(raw => raw.json())
+      .then(res => setProducts(res));
+
+    fetch(PRODUCT_URL)
+      .then(raw => raw.json())
+      .then(res => setDefaultProducts(res));
+
+  }
+
 
   // Controls whether a product is in the cart or not. Controlled by the in cart button
   function addToCart(id, newCartQuantity) {
@@ -77,10 +106,13 @@ function App() {
               cartTotal={cartTotal}
             />
           </Route>
+          <Route exact path="/add-product">
+            <AddProduct />
+          </Route>
           <Route exact path="/:productId">
             <ProductDetail
               products={products}
-              addToCart={addToCart}
+              onDelete={handleDelete}
             />
           </Route>
         </Switch>

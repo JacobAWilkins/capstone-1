@@ -4,7 +4,7 @@ import Products from '../Components/Products';
 
 function ProductPage({ products, addToCart }) {
     return (
-        <div class="productPage">
+        <div className="productPage">
             <Products
                 products={products}
                 addToCart={addToCart}

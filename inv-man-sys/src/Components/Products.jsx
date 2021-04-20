@@ -18,6 +18,7 @@ function Products({ products, addToCart }) {
             )}
         </CardColumns>
     )
+
 }
 
 export default Products;

@@ -1,10 +1,20 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import Media from 'react-bootstrap/Media';
 
-function ProductDetail({ products }) {
+function ProductDetail({ products, onDelete }) {
+    const history = useHistory();
     const { productId } = useParams();
-    const product = products.find(product => product.id === productId);
+    const product = products.find(product => product.id == productId);
+
+    const handleDelete = (e) => {
+        const PRODUCT_URL = 'http://localhost:8080/product/';
+
+        fetch(PRODUCT_URL + productId, { method: 'DELETE' })
+            .then(() => onDelete());
+
+        history.push("/")
+    }
 
     return (
         <Media style={{ marginTop: 10, marginBottom: 10 }}>
@@ -17,6 +27,7 @@ function ProductDetail({ products }) {
                 <h4>Manufacturer: <i>{product.manufacturer}</i></h4>
                 <h4>Category: <i>{product.category}</i></h4>
                 <h4>SN: <i>{product.serNum}</i></h4>
+                <input type="button" value="Delete" onClick={handleDelete} />
             </Media.Body>
         </Media>
     )
