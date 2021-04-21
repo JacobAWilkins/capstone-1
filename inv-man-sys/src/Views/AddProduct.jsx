@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 
-function AddProduct() {
+function AddProduct({ onAdd }) {
 	const history = useHistory();
 
 	const [name, setName] = useState('');
@@ -12,10 +12,7 @@ function AddProduct() {
 	const [manufacturer, setManufacturer] = useState('');
 	const [category, setCategory] = useState('');
 	const [quantity, setQuantity] = useState(0);
-	//const [image, setImage] = useState('');
 	const [image, setImage] = useState('');
-
-	const [postId, setPostId] = useState();
 
 	const handleNameChange = (e) => {
 		setName(e.target.value);
@@ -65,8 +62,6 @@ function AddProduct() {
 		} else {
 			console.log('error');
 		}
-
-		//setImage(e.target.value);
 	}
 	//<input type="text" value={image} onChange={handleImageChange} />
 	//<input type="file" accept={'images/*'} onChange={handleImageChange} />
@@ -81,7 +76,7 @@ function AddProduct() {
 
 		fetch(PRODUCT_URL, requestOptions)
 			.then(response => response.json())
-			.then(data => setPostId(data.id));
+			.then(data => onAdd(data.name));
 
 		history.push("/");
 

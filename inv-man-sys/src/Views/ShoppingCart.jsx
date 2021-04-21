@@ -20,6 +20,17 @@ function ShoppingCart({ products, addToCart, updateOrder }) {
             prod.inCart = false;
             prod.quantity = prod.quantity - prod.cartQuantity;
             prod.cartQuantity = 1;
+
+            const PRODUCT_URL = 'http://localhost:8080/product/';
+
+            const requestOptions = {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: prod.name, serNum: prod.serNum, price: prod.price, manufacturer: prod.manufacturer, category: prod.category, quantity: prod.quantity, cartQuantity: 1, image: prod.image, inCart: false, filtered: false })
+            };
+            fetch(PRODUCT_URL + prod.id, requestOptions)
+                .then(response => response.json())
+                .then(data => console.log('updating product with name: ' + data.name));
         })
         updateOrder(order, cartTotal);
 

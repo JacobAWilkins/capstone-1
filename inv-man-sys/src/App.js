@@ -17,32 +17,28 @@ function App() {
   const [order, setOrder] = useState([]);
   const [cartTotal, setCartTotal] = useState();
 
-
-
   const PRODUCT_URL = 'http://localhost:8080/product/';
 
   useEffect(() => {
-    fetch(PRODUCT_URL)
-      .then(raw => raw.json())
-      .then(res => setProducts(res));
-  }, [])
+    updateProducts();
+  }, []);
 
-  useEffect(() => {
+  const updateProducts = () => {
     fetch(PRODUCT_URL)
       .then(raw => raw.json())
-      .then(res => setDefaultProducts(res));
-  }, [])
+      .then((res) => {
+        setProducts(res);
+        setDefaultProducts(res);
+      });
+  }
 
   const handleDelete = () => {
+    updateProducts();
+  }
 
-    fetch(PRODUCT_URL)
-      .then(raw => raw.json())
-      .then(res => setProducts(res));
-
-    fetch(PRODUCT_URL)
-      .then(raw => raw.json())
-      .then(res => setDefaultProducts(res));
-
+  const handleAdd = (name) => {
+    updateProducts();
+    console.log('Added ' + name + ' to products');
   }
 
 
@@ -107,7 +103,9 @@ function App() {
             />
           </Route>
           <Route exact path="/add-product">
-            <AddProduct />
+            <AddProduct
+              onAdd={handleAdd}
+            />
           </Route>
           <Route exact path="/:productId">
             <ProductDetail

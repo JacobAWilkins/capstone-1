@@ -5,13 +5,16 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 //class Product extends React.Component {
-function Product({ id, name, price, cartQuantity, image, inCart, addToCart }) {
+function Product({ id, name, price, quantity, cartQuantity, image, inCart, addToCart }) {
 
     const [newCartQuantity, setCartQuantity] = useState(cartQuantity);
+
+    const nums = Array.from(Array(quantity).keys());
 
     // updates the cart quantity of the product
     function handleQuantityChange(e) {
         setCartQuantity(e.target.value);
+        console.log(e.target.value);
     }
 
     return (
@@ -25,17 +28,8 @@ function Product({ id, name, price, cartQuantity, image, inCart, addToCart }) {
                 <Card.Text>
                     {"$" + (price * cartQuantity).toFixed(2)}
                 </Card.Text>
-                <Form.Control controlId="selectControl" size="sm" as="select" defaultValue={newCartQuantity} onChange={handleQuantityChange}>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
+                <Form.Control size={quantity} as="select" defaultValue={newCartQuantity} onChange={handleQuantityChange}>
+                    {nums.map(num => <option>{num + 1}</option>)}
                 </Form.Control>
                 <Button className="addToCartButton" variant="outline-info" type="submit" onClick={() => addToCart(id, newCartQuantity)}>
                     {inCart ? <>In Cart</> : <>Add to Cart</>}

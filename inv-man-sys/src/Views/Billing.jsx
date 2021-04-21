@@ -29,7 +29,7 @@ function Billing() {
       <h1>Enter Payment Information</h1>
       <Container>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          <Form.Group as={Row} controlId="formHorizontalCardNumber">
+          <Form.Group as={Row}>
             <Form.Label column sm={3}>Credit Card Number</Form.Label>
             <Col sm={9}>
               <Form.Control required type="text" placeholder="0000 0000 0000 0000" />

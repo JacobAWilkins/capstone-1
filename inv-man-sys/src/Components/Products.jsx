@@ -7,9 +7,11 @@ function Products({ products, addToCart }) {
         <CardColumns>
             {products.map((product) =>
                 <Product
+                    key={product.id}
                     id={product.id}
                     name={product.name}
                     price={product.price}
+                    quantity={product.quantity}
                     cartQuantity={product.cartQuantity}
                     image={product.image}
                     inCart={product.inCart}
