@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 
 function UpdateProduct({ products, onUpdate }) {
@@ -59,7 +60,7 @@ function UpdateProduct({ products, onUpdate }) {
       .then(response => response.json())
       .then(data => onUpdate(data.name));
 
-    history.push("/");
+    history.push("/" + productId);
 
   }
 
@@ -70,33 +71,33 @@ function UpdateProduct({ products, onUpdate }) {
         <Form onSubmit={handleSubmit}>
           <Form.Group as={Row} className="shift">
             <Form.Label column sm={3}>Name:</Form.Label>
-            <input type="text" value={name} onChange={handleNameChange} />
+            <input type="text" value={name} placeholder="Ex: potatoes" onChange={handleNameChange} />
           </Form.Group>
           <Form.Group as={Row} className="shift">
             <Form.Label column sm={3}>Serial Number:</Form.Label>
-            <input type="text" value={serNum} onChange={handleSerNumChange} />
+            <input type="text" value={serNum} placeholder="Ex: 123456789012" onChange={handleSerNumChange} />
           </Form.Group>
           <Form.Group as={Row} className="shift">
             <Form.Label column sm={3}>Price:</Form.Label>
-            <input type="text" value={price} onChange={handlePriceChange} />
+            <input type="text" value={price} placeholder="Ex: 0.49" onChange={handlePriceChange} />
           </Form.Group>
           <Form.Group as={Row} className="shift">
             <Form.Label column sm={3}>Manufacturer:</Form.Label>
-            <input type="text" value={manufacturer} onChange={handleManufacturerChange} />
+            <input type="text" value={manufacturer} placeholder="Ex: Whole Foods" onChange={handleManufacturerChange} />
           </Form.Group>
           <Form.Group as={Row} className="shift">
             <Form.Label column sm={3}>Category:</Form.Label>
-            <input type="text" value={category} onChange={handleCategoryChange} />
+            <input type="text" value={category} placeholder="Ex: vegetable" onChange={handleCategoryChange} />
           </Form.Group>
           <Form.Group as={Row} className="shift">
             <Form.Label column sm={3}>Quantity:</Form.Label>
-            <input type="text" value={quantity} onChange={handleQuantityChange} />
+            <input type="text" value={quantity} placeholder="Ex: 28" onChange={handleQuantityChange} />
           </Form.Group>
           <Form.Group as={Row} className="shift">
             <Form.Label column sm={3}>Image:</Form.Label>
             <input type="file" accept={'images/*'} onChange={handleImageChange} />
           </Form.Group>
-          <input type="submit" value="Submit" />
+          <Button type="submit" variant="info">Update</Button>
         </Form>
       </Container>
     </>

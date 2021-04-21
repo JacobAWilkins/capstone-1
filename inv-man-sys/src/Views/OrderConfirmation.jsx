@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import Table from 'react-bootstrap/Table';
 
-function OrderConfirmation({ order, cartTotal }) {
+function OrderConfirmation({ order, salesTax, cartTotal }) {
   return (
     <Container style={{ marginTop: 20 }} >
       <Alert variant="success">
@@ -37,14 +37,20 @@ function OrderConfirmation({ order, cartTotal }) {
             </tr>
           )}
           <tr>
+            <th>Sales Tax</th>
+            <th>-</th>
+            <th>-</th>
+            <th>{(salesTax).toFixed(2)}</th>
+          </tr>
+          <tr>
             <th>-</th>
             <th>-</th>
             <th>-</th>
-            <th>{(cartTotal).toFixed(2)}</th>
+            <th>{(cartTotal + salesTax).toFixed(2)}</th>
           </tr>
         </tbody>
       </Table>
-      <Link to="/">
+      <Link to="/products">
         <Button type="submit" variant="info">Continue Shopping</Button>
       </Link>
     </Container>

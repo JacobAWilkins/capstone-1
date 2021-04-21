@@ -58,6 +58,7 @@ function NavBar({ defaultProducts, setProducts }) {
                         </Link>
                     </Form.Group>
                 </Form.Row>
+
             </nav>
         </header >
     )

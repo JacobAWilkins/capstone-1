@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import Media from 'react-bootstrap/Media';
+import Button from 'react-bootstrap/Button';
 
 function ProductDetail({ products, onDelete }) {
     const history = useHistory();
@@ -13,11 +14,15 @@ function ProductDetail({ products, onDelete }) {
         fetch(PRODUCT_URL + productId, { method: 'DELETE' })
             .then(() => onDelete());
 
-        history.push("/")
+        history.push("/products")
     }
 
     const handleUpdate = (e) => {
         history.push("/update-product/" + productId);
+    }
+
+    const handleBack = (e) => {
+        history.push("/products");
     }
 
     return (
@@ -31,8 +36,9 @@ function ProductDetail({ products, onDelete }) {
                 <h4>Manufacturer: <i>{product.manufacturer}</i></h4>
                 <h4>Category: <i>{product.category}</i></h4>
                 <h4>SN: <i>{product.serNum}</i></h4>
-                <input type="button" value="Update" onClick={handleUpdate} />
-                <input type="button" value="Delete" onClick={handleDelete} />
+                <Button className="detailButtons" type="button" variant="outline-info" onClick={handleBack}>Back</Button>
+                <Button className="detailButtons" type="button" variant="outline-info" onClick={handleUpdate}>Update</Button>
+                <Button className="detailButtons" type="button" variant="outline-info" onClick={handleDelete}>Delete</Button>
             </Media.Body>
         </Media>
     )

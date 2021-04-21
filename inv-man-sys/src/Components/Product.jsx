@@ -17,24 +17,26 @@ function Product({ id, name, price, quantity, cartQuantity, image, inCart, addTo
     }
 
     return (
-        <Card
-            bg={'light'}
-            style={{ width: '20rem' }}
-        >
-            <Link to={'/' + id}><Card.Img variant="top" src={image} alt={name} /></Link>
-            <Card.Body>
-                <Card.Title><Link to={'/' + id}>{name}</Link></Card.Title>
-                <Card.Text>
-                    {"$" + (price * newCartQuantity).toFixed(2)}
-                </Card.Text>
-                <Form.Control size={quantity} as="select" defaultValue={newCartQuantity} onChange={handleQuantityChange}>
-                    {nums.map(num => <option>{num + 1}</option>)}
-                </Form.Control>
-                <Button className="addToCartButton" variant="outline-info" type="submit" onClick={() => addToCart(id, newCartQuantity)}>
-                    {inCart ? <>In Cart</> : <>Add to Cart</>}
-                </Button>
-            </Card.Body>
-        </Card>
+        <>
+            <Card
+                bg={'light'}
+                style={{ width: '20rem' }}
+            >
+                <Link to={'/' + id}><Card.Img variant="top" src={image} alt={name} /></Link>
+                <Card.Body>
+                    <Card.Title><Link to={'/' + id}>{name}</Link></Card.Title>
+                    <Card.Text>
+                        {"$" + (price * newCartQuantity).toFixed(2)}
+                    </Card.Text>
+                    <Form.Control size={quantity} as="select" defaultValue={newCartQuantity} onChange={handleQuantityChange}>
+                        {nums.map(num => <option>{num + 1}</option>)}
+                    </Form.Control>
+                    <Button className="addToCartButton" variant="outline-info" type="submit" onClick={() => addToCart(id, newCartQuantity)}>
+                        {inCart ? <>In Cart</> : <>Add to Cart</>}
+                    </Button>
+                </Card.Body>
+            </Card>
+        </>
     )
 }
 

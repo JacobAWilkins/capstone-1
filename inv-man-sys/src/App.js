@@ -2,11 +2,14 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
+
+import HomePage from './Views/HomePage';
 import ProductPage from './Views/ProductPage';
 import ShoppingCart from './Views/ShoppingCart';
 import ProductDetail from './Views/ProductDetail';
 import Shipping from './Views/Shipping';
 import Billing from './Views/Billing';
+
 import AddProduct from './Views/AddProduct';
 import UpdateProduct from './Views/UpdateProduct';
 import OrderConfirmation from './Views/OrderConfirmation';
@@ -17,6 +20,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [order, setOrder] = useState([]);
   const [cartTotal, setCartTotal] = useState();
+  const [salesTax, setSalesTax] = useState();
 
   const PRODUCT_URL = 'http://localhost:8080/product/';
 
@@ -73,6 +77,7 @@ function App() {
   function updateOrder(order, cartTotal) {
     setOrder(order);
     setCartTotal(cartTotal);
+    setSalesTax(cartTotal * 0.0625)
   }
 
   return (
@@ -84,6 +89,12 @@ function App() {
         />
         <Switch>
           <Route exact path="/">
+            <HomePage
+              defaultProducts={defaultProducts}
+              setProducts={setProducts}
+            />
+          </Route>
+          <Route exact path="/products">
             <ProductPage
               products={products}
               addToCart={addToCart}
@@ -105,6 +116,7 @@ function App() {
           <Route exact path="/order-confirmation">
             <OrderConfirmation
               order={order}
+              salesTax={salesTax}
               cartTotal={cartTotal}
             />
           </Route>
