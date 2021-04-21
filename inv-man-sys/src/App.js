@@ -44,7 +44,7 @@ function App() {
 
   const handleUpdate = (name) => {
     updateProducts();
-    console.log('Update ' + name);
+    console.log('Updated ' + name);
   }
 
 
@@ -115,6 +115,7 @@ function App() {
           </Route>
           <Route exact path="/update-product/:productId">
             <UpdateProduct
+              products={products}
               onUpdate={handleUpdate}
             />
           </Route>

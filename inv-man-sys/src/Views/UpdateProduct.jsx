@@ -2,18 +2,20 @@ import { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
 
-function UpdateProduct({ onUpdate }) {
+function UpdateProduct({ products, onUpdate }) {
   const history = useHistory();
   const { productId } = useParams();
+  const product = products.find(product => product.id == productId);
 
-  const [name, setName] = useState('');
-  const [serNum, setSerNum] = useState('');
-  const [price, setPrice] = useState(0.0);
-  const [manufacturer, setManufacturer] = useState('');
-  const [category, setCategory] = useState('');
-  const [quantity, setQuantity] = useState(0);
-  const [image, setImage] = useState('');
+  const [name, setName] = useState(product.name);
+  const [serNum, setSerNum] = useState(product.serNum);
+  const [price, setPrice] = useState(product.price);
+  const [manufacturer, setManufacturer] = useState(product.manufacturer);
+  const [category, setCategory] = useState(product.category);
+  const [quantity, setQuantity] = useState(product.quantity);
+  const [image, setImage] = useState(product.image);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -39,9 +41,6 @@ function UpdateProduct({ onUpdate }) {
     if (file) {
       const filename = './images/' + file.name;
       setImage(filename);
-      //download(file, filename, '.jpg');
-
-      console.log(filename);
     } else {
       console.log('error');
     }
@@ -69,41 +68,34 @@ function UpdateProduct({ onUpdate }) {
       <Container>
         <h1>Update Product</h1>
         <Form onSubmit={handleSubmit}>
-          <label>
-            Name:
-					<input type="text" value={name} onChange={handleNameChange} />
-          </label>
-          <br />
-          <label>
-            Serial Number:
-					<input type="text" value={serNum} onChange={handleSerNumChange} />
-          </label>
-          <br />
-          <label>
-            Price:
-					<input type="text" value={price} onChange={handlePriceChange} />
-          </label>
-          <br />
-          <label>
-            Manufacturer:
-					<input type="text" value={manufacturer} onChange={handleManufacturerChange} />
-          </label>
-          <br />
-          <label>
-            Category:
-					<input type="text" value={category} onChange={handleCategoryChange} />
-          </label>
-          <br />
-          <label>
-            Quantity:
-					<input type="text" value={quantity} onChange={handleQuantityChange} />
-          </label>
-          <br />
-          <label>
-            Image:
-					<input type="file" accept={'images/*'} onChange={handleImageChange} />
-          </label>
-          <br />
+          <Form.Group as={Row} className="shift">
+            <Form.Label column sm={3}>Name:</Form.Label>
+            <input type="text" value={name} onChange={handleNameChange} />
+          </Form.Group>
+          <Form.Group as={Row} className="shift">
+            <Form.Label column sm={3}>Serial Number:</Form.Label>
+            <input type="text" value={serNum} onChange={handleSerNumChange} />
+          </Form.Group>
+          <Form.Group as={Row} className="shift">
+            <Form.Label column sm={3}>Price:</Form.Label>
+            <input type="text" value={price} onChange={handlePriceChange} />
+          </Form.Group>
+          <Form.Group as={Row} className="shift">
+            <Form.Label column sm={3}>Manufacturer:</Form.Label>
+            <input type="text" value={manufacturer} onChange={handleManufacturerChange} />
+          </Form.Group>
+          <Form.Group as={Row} className="shift">
+            <Form.Label column sm={3}>Category:</Form.Label>
+            <input type="text" value={category} onChange={handleCategoryChange} />
+          </Form.Group>
+          <Form.Group as={Row} className="shift">
+            <Form.Label column sm={3}>Quantity:</Form.Label>
+            <input type="text" value={quantity} onChange={handleQuantityChange} />
+          </Form.Group>
+          <Form.Group as={Row} className="shift">
+            <Form.Label column sm={3}>Image:</Form.Label>
+            <input type="file" accept={'images/*'} onChange={handleImageChange} />
+          </Form.Group>
           <input type="submit" value="Submit" />
         </Form>
       </Container>
