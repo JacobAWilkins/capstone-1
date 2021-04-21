@@ -8,6 +8,7 @@ import ProductDetail from './Views/ProductDetail';
 import Shipping from './Views/Shipping';
 import Billing from './Views/Billing';
 import AddProduct from './Views/AddProduct';
+import UpdateProduct from './Views/UpdateProduct';
 import OrderConfirmation from './Views/OrderConfirmation';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -39,6 +40,11 @@ function App() {
   const handleAdd = (name) => {
     updateProducts();
     console.log('Added ' + name + ' to products');
+  }
+
+  const handleUpdate = (name) => {
+    updateProducts();
+    console.log('Update ' + name);
   }
 
 
@@ -105,6 +111,11 @@ function App() {
           <Route exact path="/add-product">
             <AddProduct
               onAdd={handleAdd}
+            />
+          </Route>
+          <Route exact path="/update-product/:productId">
+            <UpdateProduct
+              onUpdate={handleUpdate}
             />
           </Route>
           <Route exact path="/:productId">

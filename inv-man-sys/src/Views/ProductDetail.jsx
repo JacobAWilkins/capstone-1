@@ -16,6 +16,10 @@ function ProductDetail({ products, onDelete }) {
         history.push("/")
     }
 
+    const handleUpdate = (e) => {
+        history.push("/update-product/" + productId);
+    }
+
     return (
         <Media style={{ marginTop: 10, marginBottom: 10 }}>
             <img className="prodPic" src={product.image} alt={product.name} />
@@ -27,6 +31,7 @@ function ProductDetail({ products, onDelete }) {
                 <h4>Manufacturer: <i>{product.manufacturer}</i></h4>
                 <h4>Category: <i>{product.category}</i></h4>
                 <h4>SN: <i>{product.serNum}</i></h4>
+                <input type="button" value="Update" onClick={handleUpdate} />
                 <input type="button" value="Delete" onClick={handleDelete} />
             </Media.Body>
         </Media>

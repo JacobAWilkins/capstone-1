@@ -54,7 +54,7 @@ function AddProduct({ onAdd }) {
 
 		const [file] = e.target.files;
 		if (file) {
-			const filename = '../images/' + file.name;
+			const filename = './images/' + file.name;
 			setImage(filename);
 			//download(file, filename, '.jpg');
 

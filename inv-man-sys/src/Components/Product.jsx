@@ -14,7 +14,6 @@ function Product({ id, name, price, quantity, cartQuantity, image, inCart, addTo
     // updates the cart quantity of the product
     function handleQuantityChange(e) {
         setCartQuantity(e.target.value);
-        console.log(e.target.value);
     }
 
     return (
@@ -26,7 +25,7 @@ function Product({ id, name, price, quantity, cartQuantity, image, inCart, addTo
             <Card.Body>
                 <Card.Title><Link to={'/' + id}>{name}</Link></Card.Title>
                 <Card.Text>
-                    {"$" + (price * cartQuantity).toFixed(2)}
+                    {"$" + (price * newCartQuantity).toFixed(2)}
                 </Card.Text>
                 <Form.Control size={quantity} as="select" defaultValue={newCartQuantity} onChange={handleQuantityChange}>
                     {nums.map(num => <option>{num + 1}</option>)}
