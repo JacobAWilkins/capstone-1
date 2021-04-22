@@ -75,6 +75,7 @@ function HomePage({ defaultProducts, setProducts }) {
             alt="First background"
           />
           <Carousel.Caption>
+            <h1>Only the freshest.</h1>
             <Link to="/products">
               <Button className="shopNowButton" variant="info" onClick={handleShop}>Shop Now</Button>
             </Link>

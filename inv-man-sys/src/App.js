@@ -28,6 +28,7 @@ function App() {
     updateProducts();
   }, []);
 
+  // fetches all products from the repo
   const updateProducts = () => {
     fetch(PRODUCT_URL)
       .then(raw => raw.json())

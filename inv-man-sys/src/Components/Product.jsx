@@ -22,9 +22,13 @@ function Product({ id, name, price, quantity, cartQuantity, image, inCart, addTo
                 bg={'light'}
                 style={{ width: '20rem' }}
             >
-                <Link to={'/' + id}><Card.Img variant="top" src={image} alt={name} /></Link>
+                <Link to={'/' + id}>
+                    <Card.Img variant="top" src={image} alt={name} />
+                </Link>
                 <Card.Body>
-                    <Card.Title><Link to={'/' + id}>{name}</Link></Card.Title>
+                    <Card.Title>
+                        <Link to={'/' + id}>{name}</Link>
+                    </Card.Title>
                     <Card.Text>
                         {"$" + (price * newCartQuantity).toFixed(2)}
                     </Card.Text>
@@ -38,6 +42,7 @@ function Product({ id, name, price, quantity, cartQuantity, image, inCart, addTo
             </Card>
         </>
     )
+
 }
 
 export default Product;
