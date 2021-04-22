@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 function Shipping() {
     const history = useHistory();
@@ -18,13 +19,20 @@ function Shipping() {
         }
 
         setValidated(true);
-        if (validated) {
+
+        if (form.checkValidity() === true) {
             history.push('/billing');
         }
     };
 
     return (
         <>
+            <Breadcrumb>
+                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                <Breadcrumb.Item href="/products">Products</Breadcrumb.Item>
+                <Breadcrumb.Item href="/shopping-cart">Shopping Cart</Breadcrumb.Item>
+                <Breadcrumb.Item active>Shipping</Breadcrumb.Item>
+            </Breadcrumb>
             <h1>Shipping</h1>
             <Container>
                 <Form width="85%" noValidate validated={validated} onSubmit={handleSubmit}>

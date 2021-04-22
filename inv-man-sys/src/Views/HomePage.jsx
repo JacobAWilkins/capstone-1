@@ -76,7 +76,7 @@ function HomePage({ defaultProducts, setProducts }) {
           />
           <Carousel.Caption>
             <Link to="/products">
-              <Button className="shopNowButton" variant="primary" onClick={handleShop}>Shop Now</Button>
+              <Button className="shopNowButton" variant="info" onClick={handleShop}>Shop Now</Button>
             </Link>
           </Carousel.Caption>
         </Carousel.Item>
@@ -92,7 +92,7 @@ function HomePage({ defaultProducts, setProducts }) {
             </Card.Text>
           </Card.Body>
           <Link to="/products">
-            <Button className="categoryShopNow" variant="primary" onClick={handleFruit}>Shop Now</Button>
+            <Button className="categoryShopNow" variant="info" onClick={handleFruit}>Shop Now</Button>
           </Link>
         </Card>
         <Card>
@@ -104,7 +104,7 @@ function HomePage({ defaultProducts, setProducts }) {
             </Card.Text>
           </Card.Body>
           <Link to="/products">
-            <Button className="categoryShopNow" variant="primary" onClick={handleMeat}>Shop Now</Button>
+            <Button className="categoryShopNow" variant="info" onClick={handleMeat}>Shop Now</Button>
           </Link>
         </Card>
         <Card>
@@ -116,7 +116,7 @@ function HomePage({ defaultProducts, setProducts }) {
             </Card.Text>
           </Card.Body>
           <Link to="/products">
-            <Button className="categoryShopNow" variant="primary" onClick={handleSeafood}>Shop Now</Button>
+            <Button className="categoryShopNow" variant="info" onClick={handleSeafood}>Shop Now</Button>
           </Link>
         </Card>
       </CardDeck>
@@ -131,7 +131,7 @@ function HomePage({ defaultProducts, setProducts }) {
             </Card.Text>
           </Card.Body>
           <Link to="/products">
-            <Button className="categoryShopNow" variant="primary" onClick={handleCoffee}>Shop Now</Button>
+            <Button className="categoryShopNow" variant="info" onClick={handleCoffee}>Shop Now</Button>
           </Link>
         </Card>
         <Card>
@@ -143,7 +143,7 @@ function HomePage({ defaultProducts, setProducts }) {
             </Card.Text>
           </Card.Body>
           <Link to="/products">
-            <Button className="categoryShopNow" variant="primary" onClick={handleVegetable}>Shop Now</Button>
+            <Button className="categoryShopNow" variant="info" onClick={handleVegetable}>Shop Now</Button>
           </Link>
         </Card>
         <Card>
@@ -155,7 +155,7 @@ function HomePage({ defaultProducts, setProducts }) {
             </Card.Text>
           </Card.Body>
           <Link to="/products">
-            <Button className="categoryShopNow" variant="primary" onClick={handleCandy}>Shop Now</Button>
+            <Button className="categoryShopNow" variant="info" onClick={handleCandy}>Shop Now</Button>
           </Link>
         </Card>
       </CardDeck>

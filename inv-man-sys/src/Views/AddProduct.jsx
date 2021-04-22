@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 function AddProduct({ onAdd }) {
 	const history = useHistory();
@@ -84,6 +85,11 @@ function AddProduct({ onAdd }) {
 
 	return (
 		<>
+			<Breadcrumb>
+				<Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+				<Breadcrumb.Item href="/products">Products</Breadcrumb.Item>
+				<Breadcrumb.Item active>Add Product</Breadcrumb.Item>
+			</Breadcrumb>
 			<Container>
 				<h1>Add Product</h1>
 				<Form onSubmit={handleSubmit}>

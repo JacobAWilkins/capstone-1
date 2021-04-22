@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 function Billing() {
   const history = useHistory();
@@ -19,13 +20,21 @@ function Billing() {
     }
 
     setValidated(true);
-    if (validated) {
+
+    if (form.checkValidity() === true) {
       history.push('/order-confirmation');
     }
   };
 
   return (
     <>
+      <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/products">Products</Breadcrumb.Item>
+        <Breadcrumb.Item href="/shopping-cart">Shopping Cart</Breadcrumb.Item>
+        <Breadcrumb.Item href="/shipping">Shipping</Breadcrumb.Item>
+        <Breadcrumb.Item active>Billing</Breadcrumb.Item>
+      </Breadcrumb>
       <h1>Enter Payment Information</h1>
       <Container>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>

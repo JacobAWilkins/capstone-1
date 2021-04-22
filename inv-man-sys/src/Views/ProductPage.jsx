@@ -5,6 +5,7 @@ import Products from '../Components/Products';
 import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 function ProductPage({ products, addToCart }) {
 
@@ -14,8 +15,16 @@ function ProductPage({ products, addToCart }) {
         </Tooltip>
     );
 
+    const handleAddProduct = (e) => {
+        window.scrollTo(0, 0);
+    }
+
     return (
         <div className="productPage">
+            <Breadcrumb>
+                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                <Breadcrumb.Item active>Products</Breadcrumb.Item>
+            </Breadcrumb>
             <Products
                 products={products}
                 addToCart={addToCart}
@@ -26,7 +35,7 @@ function ProductPage({ products, addToCart }) {
                     delay={{ show: 250, hide: 400 }}
                     overlay={addTip}
                 >
-                    <Button className="addProductButton" type="submit" variant="info" size="md">+</Button>
+                    <Button className="addProductButton" type="submit" variant="info" size="md" onClick={handleAddProduct}>+</Button>
                 </OverlayTrigger>
             </Link>
         </div>

@@ -79,10 +79,6 @@ li {
   color: #17a2b8;
 }
 
-.productPage {
-  padding-top: 10px;
-}
-
 .addToCartButton {
   margin-top: 20px;
 }
@@ -117,4 +113,9 @@ li {
 
 .categoryTag {
   font-weight: bold;
+}
+
+.breadcrumb {
+  padding: .2rem 1rem;
+  background-color: #f8f9fa;
 }

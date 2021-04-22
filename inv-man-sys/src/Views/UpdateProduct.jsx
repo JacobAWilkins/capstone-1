@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 function UpdateProduct({ products, onUpdate }) {
   const history = useHistory();
@@ -66,6 +67,12 @@ function UpdateProduct({ products, onUpdate }) {
 
   return (
     <>
+      <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/products">Products</Breadcrumb.Item>
+        <Breadcrumb.Item href={"/" + productId}>{product.name}</Breadcrumb.Item>
+        <Breadcrumb.Item active>Update Product</Breadcrumb.Item>
+      </Breadcrumb>
       <Container>
         <h1>Update Product</h1>
         <Form onSubmit={handleSubmit}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Products from '../Components/Products';
 
 function ShoppingCart({ products, addToCart, updateOrder }) {
@@ -39,7 +40,12 @@ function ShoppingCart({ products, addToCart, updateOrder }) {
 
     return (
         <div>
-            <h1>Shopping Cart</h1>
+            <Breadcrumb>
+                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                <Breadcrumb.Item href="/products">Products</Breadcrumb.Item>
+                <Breadcrumb.Item active>Shopping Cart</Breadcrumb.Item>
+            </Breadcrumb>
+            <h1>Review Cart</h1>
             <Products
                 products={filteredProducts}
                 addToCart={addToCart}
