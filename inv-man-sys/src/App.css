@@ -1,0 +1,122 @@
+.App {
+  text-align: center;
+}
+
+nav {
+  background-color: #343a40;
+}
+
+footer { 
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #343a40;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+li {
+  list-style: none;
+  padding: 10px;
+}
+
+.title {
+  color: white;
+}
+
+.title:hover {
+  color: #17a2b8;
+  text-decoration: none;
+}
+
+.totalPrice { grid-area: total; }
+.checkout { grid-area: checkout; }
+
+.shoppingCart {
+  display: grid;
+  grid-template-areas: "total total checkout";
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.title {
+  font-family: 'Brush Script MT', cursive;
+}
+
+.prodPic {
+  border: 2px solid black;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.searchBar {
+  width: 300px;
+}
+
+.cartIcon {
+  color: white;
+  font-size: 0.3rem;
+  padding: 10px;
+}
+
+.cartIcon:hover {
+  color: #17a2b8;
+}
+
+.addToCartButton {
+  margin-top: 20px;
+}
+
+.shift {
+  margin-left: 27%;
+}
+
+.detailButtons {
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+.addProductButton {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.categoriesPanel {
+  margin-top: 15px;
+}
+
+.shopNowButton {
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 200px;
+}
+
+.categoryShopNow {
+  margin-bottom: 15px;
+}
+
+.categoryTag {
+  font-weight: bold;
+}
+
+.breadcrumb {
+  padding: .2rem 1rem;
+  background-color: #f8f9fa;
+}
